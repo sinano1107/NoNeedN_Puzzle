@@ -1,0 +1,66 @@
+<div class="js_bridge">
+  <p id="n"><%= @n %></p>
+  <p id="truth"><%= @truth %></p>
+  <p id="lies"><%= @lies %></p>
+</div>
+
+<div class="row">
+  <div class="col s12">
+    <p id="test">test</p>
+
+    <div>
+      <div class="row">
+        <div class="col s6">
+          <table class="centered">
+            <tbody id="answer1"></tbody>
+          </table>
+        </div>
+        <div class="col s6">
+          <table class="centered">
+            <tbody id="answer2"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s6">
+          <table class="centered">
+            <tbody id="answer3"></tbody>
+          </table>
+        </div>
+      </div>
+      <%= link_to "finish", "/", class: "btn waves-effect waves-light", :method => :get %>
+      <button class="btn waves-effect waves-light" id="input_btn">input!</button>
+      <button class="btn waves-effect waves-light" id="next_btn">next!</button>
+    </div>
+
+    <%= form_tag("/processing/capture_preparation/#{@n}") do %>
+    <div id="input_wrapper">
+      <div class="row">
+        <div class="col s6">
+          <table class="centered">
+            <tbody id="input1"></tbody>
+          </table>
+        </div>
+        <div class="col s6">
+          <table class="centered">
+            <tbody id="input2"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s6">
+          <table class="centered">
+            <tbody id="input3"></tbody>
+          </table>
+        </div>
+      </div>
+      <button type="submit" class="btn waves-effect waves-light right">OK!</button>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%= javascript_include_tag 'capture' %>

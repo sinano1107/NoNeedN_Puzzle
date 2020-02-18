@@ -1,0 +1,35 @@
+
+<%= form_tag("/processing/capture_preparation/#{@n}") do %>
+<div class="js_bridge">
+  <p id="n"><%= @n %></p>
+</div>
+<div class="container">
+  <h1>input data</h1>
+
+  <div class="row">
+    <div class="col s6">
+      <table>
+        <tbody id="answer1"></tbody>
+      </table>
+    </div>
+    <div class="col s6">
+      <table>
+        <tbody id="answer2"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s6">
+      <table>
+        <tbody id="answer3"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <button type="submit" class="btn waves-effect waves-light right">OK!</button>
+</div>
+
+<% end %>
+
+<%= javascript_include_tag 'input_data' %>

@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>N input</h1>
+  <%= form_tag("/processing/input_n") do %>
+    <div class="input-field">
+      <input name="n" type="text" class="validate">
+      <label>Please enter the number of elements N</label>
+    </div>
+    <button type="submit" class="btn waves-effect waves-light"><i class="material-icons left">send</i>submit!</button>
+  <% end %>
+</div>
